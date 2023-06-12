@@ -1,8 +1,8 @@
-import React from 'react'
+import { Container } from "@/components/container";
+import React from "react";
 
-export const Footer = () => {
-  return (
-    <div>Footer</div>
-  )
-}
-
+export const Footer = () => (
+  <footer>
+    <Container>Oblomov Media</Container>
+  </footer>
+);
