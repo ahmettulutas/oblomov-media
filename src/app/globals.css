@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+  --brand-color: red;
+}
 * {
   box-sizing: border-box;
   padding: 0;

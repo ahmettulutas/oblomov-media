@@ -1,27 +1,33 @@
 "use client";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 import { Container } from "@/components/containers";
-import { listVariants, navLinks, navVariants, sideVariants, ulVariants } from "@/constants/navbar";
+import { listVariants, navLinks, sideVariants } from "@/constants/navbar";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
-import CloseIcon from "public/images/icons/close.svg";
-import MenuIcon from "public/images/icons/menu.svg";
 import CameraIcon from "public/images/icons/camera.svg";
+import { NavbarToggle } from "./NavbarToggle";
+import { usePathname } from "next/navigation";
 
 export const Navbar: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false),
-    [open, cycleOpen] = useCycle(false, true),
+  
+  const [scrolled, setScrolled] = React.useState(false);
+  const [open, cycleOpen] = useCycle(false, true);
+  const currentPathName = usePathname();
+  const handleScroll = () => {
+    if (window.scrollY > 70) setScrolled(true);
+    else setScrolled(false);
+  };
 
-    handleScroll = () => {
-      if (window.scrollY > 70) setScrolled(true);
-      else setScrolled(false);
-    };
-
-  useEffect(() => {
+  React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return (() => window.removeEventListener("scroll", handleScroll));
   }, []);
+
+  React.useEffect(() => {
+    cycleOpen();
+  }, [currentPathName]);
+
   return (
     <nav className={twMerge("text-white transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent opacity-95", scrolled ? "bg-primaryDark fixed py-2" : "bg-transparent absolute py-4")}>
       <Container className={twMerge("flex justify-between", scrolled ? "py-1" : "py-10")}>
@@ -32,38 +38,45 @@ export const Navbar: React.FC = () => {
         <ul className="gap-2 hidden md:flex">
           { navLinks.map(item => (
             <li key={item.id}>
-              <Link href={item.id} className="h-full block relative mx-auto text-white before:w-0 hover:before:w-full
-              before:h-0.25 before:bg-white before:transition-all before:bottom-[-0.125rem] before:duration-200 before:absolute">
+              <Link href={item.id} className={`${currentPathName === item.id ?  "before:w-full" : ""} h-full block relative mx-auto text-white before:w-0 hover:before:w-full
+              before:h-0.25 before:bg-white before:transition-all before:bottom-[-0.125rem] before:duration-200 before:absolute`}>
                 {item.title.toLocaleUpperCase("tr-TR")}
               </Link>
             </li>
           ))}
         </ul>
         <AnimatePresence>
-          { open ?
-            <motion.nav
-              className="md:hidden bg-primaryDark p-4 absolute right-0 top-0 h-screen"
-              initial={false}
-              animate={open ? "open" : "closed"}
-              variants={navVariants}
+          { open && (
+            <motion.aside
+              className="md:hidden bg-primaryDark absolute right-0 top-0 h-screen p-4"
+              initial={{ width: 0 }}
+              animate={{ width: "50vw" }}
+              exit={{ width: 0, transition: { delay: 0.4, duration: 0.3 } }}
             >
-              <CloseIcon className="m-4 ml-auto text-white" onClick={() => cycleOpen()}/>
               <motion.ul
+                className="mt-24"
                 initial="closed"
+                animate="open"
                 exit="closed"
-                variants={ulVariants}
+                variants={sideVariants}
               >
-                {navLinks.map(item => (
-                  <motion.li key={item.id} whileHover={{ scale: 1.1 }} variants={listVariants} className="border-t-2 border-borderTop py-3 px-3">
-                    <Link className="text-white" href={item.id}>{item.title}</Link>
+                {navLinks.map(({ title, id }) => (
+                  <motion.li
+                    className="border-t-2 border-borderTop py-3 px-3 text-center"
+                    key={id}
+                    whileHover={{ scale: 1.1 }}
+                    variants={listVariants}
+                  >
+                    <Link href={id}>{title}</Link>
                   </motion.li>
                 ))}
               </motion.ul>
-            </motion.nav>
-            : null
-          }
+            </motion.aside>
+          )}
         </AnimatePresence>
-        { !open ? <MenuIcon onClick={() => cycleOpen()} className="text-white md:hidden"/> : null }
+        <div className="z-20 md:hidden flex justify-center items-center">
+          <NavbarToggle open={open} toggle={cycleOpen}/>
+        </div>
       </Container>
     </nav>
   );

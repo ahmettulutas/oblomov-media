@@ -12,7 +12,9 @@ export default function Home() {
         muted
       >
       </video>
-      <Image alt="camera-focus" width="550" height="350" src={"/camera.png"} className="m-auto p-4" />
+      <div className="relative w-80 h-screen flex items-center">
+      <Image alt="camera-focus" style={{width:"100%", height:"auto", objectFit: "cover"}} width={400} height={400} src={"/camera.png"} className="m-auto p-4" />
+      </div>
       <div className="fixed top-0 h-full w-full bg-overLay -z-[8] opacity-70">
       </div>
       <section className="flex justify-between m-8 items-center text-xl">

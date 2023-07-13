@@ -319,10 +319,6 @@
         "SwitchCase": 1
       }
     ],
-    //"linebreak-style": [
-    //  "error",
-    //  "unix"
-    //],
     "quotes": [
       "error",
       "double"
@@ -337,6 +333,6 @@
         "code": 250,
         "tabWidth": 4
       }
-    ]
+    ],
   }
 }

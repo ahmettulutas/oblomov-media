@@ -21,6 +21,7 @@ module.exports = {
       },
       colors: {
         primaryDark: "#1a1a1a",
+        brandColor : "var(--brand-color)",
         overLay: "#212020",
         borderTop: "rgba(255,255,255,.03)"
       }

@@ -4,27 +4,19 @@ export const navLinks = [
     title: "Anasayfa"
   },
   {
-    id: "videos",
+    id: "/videos",
     title: "Videolar"
   },
   {
-    id: "studio",
+    id: "/studio",
     title: "Stüdyo"
   },
   {
-    id: "contact",
+    id: "/contact",
     title: "İletişim"
   }
 
 ] as const;
-export const ulVariants = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 }
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 }
-  }
-};
 export const listVariants = {
   open: {
     y: 0,
@@ -42,11 +34,17 @@ export const listVariants = {
   }
 };
 
-export const navVariants = {
+export const sideVariants = {
   closed: {
-    width: "0"
+    transition: {
+      staggerChildren: 0.1,
+      staggerDirection: -1
+    }
   },
   open: {
-    width: "50vw"
+    transition: {
+      staggerChildren: 0.1,
+      staggerDirection: 1
+    }
   }
 };
