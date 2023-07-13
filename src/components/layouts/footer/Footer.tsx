@@ -1,4 +1,4 @@
-import { Container } from "@/components/container";
+import { Container } from "@/components/containers";
 import React from "react";
 
 export const Footer = () => (

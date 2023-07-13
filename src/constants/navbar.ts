@@ -17,7 +17,14 @@ export const navLinks = [
   }
 
 ] as const;
-
+export const ulVariants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 }
+  }
+};
 export const listVariants = {
   open: {
     y: 0,
@@ -35,17 +42,11 @@ export const listVariants = {
   }
 };
 
-export const sideVariants = {
+export const navVariants = {
   closed: {
-    transition: {
-      staggerChildren: 0.2,
-      staggerDirection: -1
-    }
+    width: "0"
   },
   open: {
-    transition: {
-      staggerChildren: 0.2,
-      staggerDirection: 1
-    }
+    width: "50vw"
   }
 };
