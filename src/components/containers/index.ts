@@ -1,1 +1,2 @@
-export { Container } from "./Container";
+export { Container } from './Container';
+export { ContentContainer } from './ContentContainer';

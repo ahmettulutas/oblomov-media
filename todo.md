@@ -1,0 +1,1 @@
+## When logo is clicked navbar opens again.

@@ -1,1 +1,1 @@
-export { RotatingButton } from "./RotatingButton";
+export { RotatingButton } from './RotatingButton';

@@ -1,19 +1,19 @@
 export const navLinks = [
   {
-    id: "/",
-    title: "Anasayfa"
+    id: '/',
+    title: 'Anasayfa'
   },
   {
-    id: "/videos",
-    title: "Videolar"
+    id: '/videos',
+    title: 'Videolar'
   },
   {
-    id: "/studio",
-    title: "Stüdyo"
+    id: '/studio',
+    title: 'Stüdyo'
   },
   {
-    id: "/contact",
-    title: "İletişim"
+    id: '/contact',
+    title: 'İletişim'
   }
 
 ] as const;

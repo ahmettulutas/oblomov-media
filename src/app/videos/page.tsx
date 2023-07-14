@@ -1,5 +1,5 @@
-import { RotatingButton } from "@/components/buttons";
-import React from "react";
+import { RotatingButton } from '@/components/buttons';
+import React from 'react';
 
 const Page = () => (
   <>

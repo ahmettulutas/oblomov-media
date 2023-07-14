@@ -321,7 +321,7 @@
     ],
     "quotes": [
       "error",
-      "double"
+      "single"
     ],
     "semi": [
       "error",
@@ -333,6 +333,6 @@
         "code": 250,
         "tabWidth": 4
       }
-    ],
+    ]
   }
 }
