@@ -1,5 +1,5 @@
 'use client';
-import { AnimatePresence, motion, useCycle } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Container } from '@/components/containers';
 import { listVariants, navLinks, sideVariants } from '@/constants/navbar';
 import Link from 'next/link';
@@ -8,11 +8,10 @@ import { twMerge } from 'tailwind-merge';
 import CameraIcon from 'public/images/icons/camera.svg';
 import { NavbarToggle } from './NavbarToggle';
 import { usePathname } from 'next/navigation';
-
 export const Navbar: React.FC = () => {
 
   const [scrolled, setScrolled] = React.useState(false);
-  const [open, cycleOpen] = useCycle(false, true);
+  const [open, setOpen] = React.useState(false);
   const currentPathName = usePathname();
   const handleScroll = () => {
     if (window.scrollY > 70) setScrolled(true);
@@ -25,7 +24,7 @@ export const Navbar: React.FC = () => {
   }, []);
 
   React.useEffect(() => {
-    cycleOpen();
+    setOpen(false);
   }, [currentPathName]);
 
   return (
@@ -75,7 +74,7 @@ export const Navbar: React.FC = () => {
           )}
         </AnimatePresence>
         <div className="z-20 md:hidden flex justify-center items-center">
-          <NavbarToggle open={open} toggle={cycleOpen}/>
+          <NavbarToggle open={open} toggle={() => setOpen(!open)}/>
         </div>
       </Container>
     </nav>
