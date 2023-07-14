@@ -24,14 +24,15 @@ module.exports = {
         brandColor: 'var(--brand-color)',
         overLay: '#212020',
         borderTop: 'rgba(255,255,255,.03)'
+      },
+      fontFamily: {
+        lato: 'Lato, Helvetica, Arial, sans-serif'
+      },
+      fontWeight: {
+        bold: '700'
       }
-    },
-    fontFamily: {
-      lato: 'Lato, Helvetica, Arial, sans-serif'
-    },
-    fontWeight: {
-      bold: '700'
     }
+
 
   },
   plugins: []
