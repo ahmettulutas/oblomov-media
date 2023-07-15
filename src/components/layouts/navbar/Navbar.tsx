@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
       <Container className={twMerge('flex justify-between', scrolled ? 'py-1' : 'py-10')}>
         <Link href="/" className="flex gap-3 items-center justify-center">
           <CameraIcon className="text-white" />
-          <p className="text-xl">OBLOMOV</p>
+          <p className=" text-sm md:text-xl">OBLOMOV</p>
         </Link>
         <ul className="gap-2 hidden md:flex">
           { navLinks.map(item => (
