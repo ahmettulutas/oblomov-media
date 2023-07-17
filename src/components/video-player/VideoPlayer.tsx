@@ -1,12 +1,15 @@
 'use client';
 import React from 'react';
-import Modal from '../modal/Modal';
+
 import { AnimatePresence, motion } from 'framer-motion';
 import { videoCardVariants } from '@/constants/motinVariants';
-type VideoProps = {
+import { Modal } from '../modal';
+
+type Props = {
   videoId: string;
 }
-const VideoPlayer: React.FC<VideoProps> = ({ videoId }) => {
+
+export const VideoPlayer: React.FC<Props> = ({ videoId }) => {
   const [showModal, setShowModal] = React.useState(false);
 
   return (
@@ -34,7 +37,8 @@ const VideoPlayer: React.FC<VideoProps> = ({ videoId }) => {
                     className="w-full h-full"
                     title="YouTube Video"
                     allowFullScreen
-                  ></iframe>
+                  >
+                  </iframe>
                 </Modal>
               </div>
             </div>
@@ -46,5 +50,3 @@ const VideoPlayer: React.FC<VideoProps> = ({ videoId }) => {
 
   );
 };
-
-export default VideoPlayer;

@@ -1,5 +1,5 @@
-import { ContentContainer } from '@/components/containers';
-import VideoPlayer from '@/components/video-player/VideoPlayer';
+import { ContentContainer, VideoPlayer } from '@/components';
+
 import { videos } from '@/constants/videos';
 import React from 'react';
 

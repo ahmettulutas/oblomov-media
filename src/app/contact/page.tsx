@@ -1,10 +1,10 @@
-import { RotatingButton } from '@/components/buttons';
+import { RotatingButton } from '@/components';
 import React from 'react';
 
-const Page = () => (
-  <div className="flex items-center justify-center h-screen bg-black">
-    <RotatingButton />
-  </div>
-);
-
-export default Page;
+export default function Page() {
+  return (
+    <div className="flex items-center justify-center h-screen bg-black">
+      <RotatingButton />
+    </div>
+  );
+}
