@@ -1,7 +1,7 @@
-import { ContentContainer } from '@/components/containers';
-import VideoPlayer from '@/components/video-player/VideoPlayer';
-import { videos } from '@/constants/videos';
 import React from 'react';
+
+import { ContentContainer, VideoPlayer } from '@/components';
+import { videos } from '@/constants/videos';
 
 const Page = () => (
   <ContentContainer className='pt-52 pb-10'>

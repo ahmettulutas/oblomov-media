@@ -1,8 +1,8 @@
+import React from 'react';
 import { Container } from '@/components/containers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiArrowNarrowRight } from 'react-icons/hi';
-
 export default function Home() {
   return (
     <main className={'flex h-screen max-h-screen flex-col items-center justify-between'}>

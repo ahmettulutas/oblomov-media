@@ -1,3 +1,4 @@
+import React from 'react';
 import { ContentContainer } from '@/components/containers';
 import { FaFacebookF, FaGooglePlusG, FaTwitter, FaInstagram } from 'react-icons/fa';
 
@@ -14,7 +15,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="w-full col-span-3 md:col-span-1 text-center">
-        <h1 className='font-bold mb-2'>Bizimle İletişime Geçin</h1>
+        <h6 className='font-bold mb-2'>Bizimle İletişime Geçin</h6>
         <p className='text-sm text-gray-300'> Nullam viverra consectetuer quisque cursus et, porttitor risus.</p>
       </div>
       <div className="w-full col-span-3 md:col-span-1">

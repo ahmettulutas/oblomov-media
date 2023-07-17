@@ -10,6 +10,9 @@ module.exports = {
       height: {
         0.25: '0.0625rem'
       },
+      width: {
+        0.25: '0.0625rem'
+      },
       maxWidth: {
         '8xl': '90rem'
       },
