@@ -5,7 +5,7 @@ import { HiArrowNarrowRight } from 'react-icons/hi';
 
 export default function Home() {
   return (
-    <main className={'flex h-screen flex-col items-center justify-between'}>
+    <main className={'flex h-screen max-h-screen flex-col items-center justify-between'}>
       <video className="fixed top-0 h-full w-full object-cover -z-[10] overflow-hidden"
         src="https://assets.mixkit.co/videos/preview/mixkit-aerial-landscape-of-a-huge-city-at-dusk-41374-large.mp4"
         autoPlay
@@ -18,7 +18,7 @@ export default function Home() {
       </div>
       <div className="fixed top-0 h-full w-full bg-overLay -z-[8] opacity-70">
       </div>
-      <Container className={'flex justify-between text-xl py-4 items-center'}>
+      <Container className={'flex justify-between text-sm md:text-xl py-4 items-center'}>
         <p>OBLOMOV</p>
         <div className="relative w-20 h-10">
           <Image alt="slider-bar" fill src={'/slider-bar.png'} />

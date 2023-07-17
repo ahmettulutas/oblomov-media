@@ -1,22 +1,3 @@
-export const navLinks = [
-  {
-    id: '/',
-    title: 'Anasayfa'
-  },
-  {
-    id: '/videos',
-    title: 'Videolar'
-  },
-  {
-    id: '/studio',
-    title: 'Stüdyo'
-  },
-  {
-    id: '/contact',
-    title: 'İletişim'
-  }
-
-] as const;
 export const listVariants = {
   open: {
     y: 0,
@@ -45,6 +26,19 @@ export const sideVariants = {
     transition: {
       staggerChildren: 0.1,
       staggerDirection: 1
+    }
+  }
+};
+export const videoCardVariants = {
+  offscreen: {
+    y: 100,
+    opacity: 0
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8
     }
   }
 };

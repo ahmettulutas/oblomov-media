@@ -1,13 +1,14 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Container } from '@/components/containers';
-import { listVariants, navLinks, sideVariants } from '@/constants/navbar';
+import { listVariants, sideVariants } from '@/constants/motinVariants';
 import Link from 'next/link';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import CameraIcon from 'public/images/icons/camera.svg';
 import { NavbarToggle } from './NavbarToggle';
 import { usePathname } from 'next/navigation';
+import { navLinks } from '@/constants/links';
 export const Navbar: React.FC = () => {
 
   const [scrolled, setScrolled] = React.useState(false);
@@ -28,11 +29,11 @@ export const Navbar: React.FC = () => {
   }, [currentPathName]);
 
   return (
-    <nav className={twMerge('text-white transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent opacity-95', scrolled ? 'bg-primaryDark fixed py-2' : 'bg-transparent absolute py-4')}>
+    <nav className={twMerge('text-white transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent md:opacity-95', scrolled ? 'bg-primaryDark fixed py-2' : 'bg-transparent absolute py-4')}>
       <Container className={twMerge('flex justify-between', scrolled ? 'py-1' : 'py-10')}>
         <Link href="/" className="flex gap-3 items-center justify-center">
           <CameraIcon className="text-white" />
-          <p className="text-xl">OBLOMOV</p>
+          <p className=" text-sm md:text-xl">OBLOMOV</p>
         </Link>
         <ul className="gap-2 hidden md:flex">
           { navLinks.map(item => (
