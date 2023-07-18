@@ -5,7 +5,7 @@ yellow='\033[0;33m'
 no_color='\033[0m'
 
 FILES_PATTERN='\.(js|jsx|ts|tsx)(\..+)?$'
-FORBIDDENCONSOLE='console\.[clear|dir|log|info|warn|error]'
+FORBIDDENCONSOLE='console\.[clear|dir|log|info|warn|error|table]'
 FORBIDDENDEBUGGER='debugger'
 
 echo -e "\n${yellow}Executing pre-commit hook...${no_color}\n"

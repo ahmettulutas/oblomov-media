@@ -2,7 +2,6 @@ import React from 'react';
 import './rotating-button.css';
 
 export const RotatingButton = () => {
-  console.table({ 0: 'first' });
   return (
     <div className="wrapper">
       <div className="btn">
