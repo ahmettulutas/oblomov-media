@@ -17,7 +17,8 @@ module.exports = {
         '8xl': '90rem'
       },
       backgroundColor: {
-        primary: '0000'
+        primary: '0000',
+        secondary: '#111a21'
       },
       boxShadow: {
         nav: '0 2px 5px 0 rgba(0,0,0,0.1)'
