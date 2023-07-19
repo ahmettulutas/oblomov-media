@@ -1,14 +1,15 @@
 "use client"
 import { OrbitControls, Preload } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
-import React, { Suspense, useEffect, useState } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import React from 'react';
 import { CanvasLoader } from './CanvasLoader';
 import { CameraModel } from './CameraModel';
+import { useScroll, useTime, useTransform } from 'framer-motion';
 
 export const CameraCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia('(max-width: 500px)');
     // Set the initial value of the `isMobile` state variable
@@ -27,16 +28,14 @@ export const CameraCanvas = () => {
 
   return (
     <Canvas
+      className='bg-secondary'
       frameloop="demand"
       shadows
-      dpr={[1, 2]}
-      camera={{ position: [2, 0, 12.25], fov: 15 }}
-      style={{
-        backgroundColor: '#111a21',
-      }}
+      dpr={[1, 2]} // device-pixel-ratio
+      camera={{ position: [2, 0, 12.25], fov: 15 }} // It's an object with properties like position and fov. position sets the initial camera position as an array [x, y, z]. fov stands for "field of view" and determines the extent of the scene visible to the camera.
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={<CanvasLoader />}>
+      <React.Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           autoRotate
           enableZoom={false}
@@ -44,7 +43,7 @@ export const CameraCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <CameraModel isMobile={isMobile} />
-      </Suspense>
+      </React.Suspense>
       <Preload all />
     </Canvas>
   );

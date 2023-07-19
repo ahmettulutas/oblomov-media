@@ -6,7 +6,6 @@ import { useGLTF } from "@react-three/drei";
 type CameraProps = {
   isMobile: boolean;
 }
-
 export const CameraModel: React.FC<CameraProps> = ({ isMobile }) => {
   const camera = useGLTF('./canon-camera-model/scene.gltf');
 
@@ -24,9 +23,9 @@ export const CameraModel: React.FC<CameraProps> = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={camera.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, 0] : [0, 0, 0]}
-        rotation={[-0.01, -0.2, -0.1]}
+        scale={isMobile ? 0.5 : 0.75}
+        position={isMobile ? [0, 0, 0] : [0, -0.3, 0]}
+        rotation={[-0.01, 0, -0.1]}
       />
     </mesh>
   );
