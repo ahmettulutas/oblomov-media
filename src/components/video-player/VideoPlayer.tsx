@@ -1,8 +1,10 @@
 'use client';
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import React from 'react';
 
-import { AnimatePresence, motion } from 'framer-motion';
 import { videoCardVariants } from '@/constants/motinVariants';
+
 import { Modal } from '../modal';
 
 type Props = {
@@ -20,9 +22,9 @@ export const VideoPlayer: React.FC<Props> = ({ videoId }) => {
         viewport={{ once: true, amount: 0.8 }}
         variants={videoCardVariants}
       >
-        <div className='grid grid-cols-1 w-auto' onClick={() => setShowModal(true)}>
-          <img
-            className='col-span-1'
+        <div className='grid grid-cols-1 h-80 relative' onClick={() => setShowModal(true)} role="button" tabIndex={0}>
+          <Image
+            fill
             src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
             alt="Video Thumbnail"
           />
@@ -37,8 +39,7 @@ export const VideoPlayer: React.FC<Props> = ({ videoId }) => {
                     className="w-full h-full"
                     title="YouTube Video"
                     allowFullScreen
-                  >
-                  </iframe>
+                  />
                 </Modal>
               </div>
             </div>

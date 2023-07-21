@@ -1,10 +1,10 @@
-import React from 'react';
-import { Accordion, ContentContainer } from '@/components';
+import Image from 'next/image';
+
 import studioBg from '@/assets/images/studio-bg.jpeg';
 import icon1 from '@/assets/images/studio-icon1.png';
 import icon2 from '@/assets/images/studio-icon2.png';
 import icon3 from '@/assets/images/studio-icon3.png';
-import Image from 'next/image';
+import { Accordion, ContentContainer } from '@/components';
 import { accordionData } from '@/constants/accordion';
 
 export default function Page() {

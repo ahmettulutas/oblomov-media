@@ -1,4 +1,3 @@
-import React from 'react';
 import { RotatingButton } from '@/components/buttons';
 
 export default function Page() {

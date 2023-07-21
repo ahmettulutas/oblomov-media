@@ -1,19 +1,24 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Container } from '@/components/containers';
-import { listVariants, sideVariants } from '@/constants/motinVariants';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import CameraIcon from 'public/images/icons/camera.svg';
-import { NavbarToggle } from './NavbarToggle';
-import { usePathname } from 'next/navigation';
+
+import { Container } from '@/components/containers';
 import { navLinks } from '@/constants/links';
+import { listVariants, sideVariants } from '@/constants/motinVariants';
+import CameraIcon from '@/public/images/icons/camera.svg';
+
+import { NavbarToggle } from './NavbarToggle';
+
+
 export const Navbar: React.FC = () => {
 
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const currentPathName = usePathname();
+
   const handleScroll = () => {
     if (window.scrollY > 70) setScrolled(true);
     else setScrolled(false);
@@ -36,7 +41,7 @@ export const Navbar: React.FC = () => {
           <p className=" text-sm md:text-xl">OBLOMOV</p>
         </Link>
         <ul className="gap-2 hidden md:flex">
-          { navLinks.map(item => (
+          {navLinks.map(item => (
             <li key={item.id}>
               <Link href={item.id} className={`${currentPathName === item.id ? 'before:w-full' : ''} h-full block relative mx-auto text-white before:w-0 hover:before:w-full
               before:h-0.25 before:bg-white before:transition-all before:bottom-[-0.125rem] before:duration-200 before:absolute`}>
@@ -46,7 +51,7 @@ export const Navbar: React.FC = () => {
           ))}
         </ul>
         <AnimatePresence>
-          { open && (
+          {open && (
             <motion.aside
               className="md:hidden bg-primaryDark absolute right-0 top-0 h-screen p-4"
               initial={{ width: 0 }}
@@ -75,7 +80,7 @@ export const Navbar: React.FC = () => {
           )}
         </AnimatePresence>
         <div className="z-20 md:hidden flex justify-center items-center">
-          <NavbarToggle open={open} toggle={() => setOpen(!open)}/>
+          <NavbarToggle open={open} toggle={() => setOpen(!open)} />
         </div>
       </Container>
     </nav>

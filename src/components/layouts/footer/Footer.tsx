@@ -1,6 +1,7 @@
-import React from 'react';
-import { ContentContainer } from '@/components/containers';
+
 import { FaFacebookF, FaGooglePlusG, FaTwitter, FaInstagram } from 'react-icons/fa';
+
+import { ContentContainer } from '@/components/containers';
 
 export const Footer = () => (
   <footer className="bg-primaryDark relative">
@@ -19,7 +20,7 @@ export const Footer = () => (
         <p className='text-sm text-gray-300'> Nullam viverra consectetuer quisque cursus et, porttitor risus.</p>
       </div>
       <div className="w-full col-span-3 md:col-span-1">
-        <p className='text-sm text-gray-300 text-right'> +90 531 779 89 28<br></br> ahmetulutas93@gmail.com</p>
+        <p className='text-sm text-gray-300 text-right'> +90 531 779 89 28<br /> ahmetulutas93@gmail.com</p>
       </div>
     </ContentContainer>
   </footer>

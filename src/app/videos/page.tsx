@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ContentContainer, VideoPlayer } from '@/components';
 import { videos } from '@/constants/videos';
 

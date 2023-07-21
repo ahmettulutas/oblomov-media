@@ -1,6 +1,6 @@
-import React from 'react';
 import './globals.css';
 import { Roboto } from 'next/font/google';
+
 import { Navbar } from '@/components/layouts';
 
 export const metadata = {
@@ -10,9 +10,9 @@ export const metadata = {
 // eslint-disable-next-line new-cap
 const roboto = Roboto({ subsets: ['cyrillic'], weight: '300' });
 
-type Props = {children: React.ReactNode}
+type Props = { children: React.ReactNode }
 
-export default function RootLayout ({ children }: Props) {
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="tr">
       <body className={`text-white ${roboto.className}`}>

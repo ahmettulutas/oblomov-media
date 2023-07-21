@@ -1,9 +1,9 @@
-import React from 'react';
-import { Container } from '@/components/containers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiArrowNarrowRight } from 'react-icons/hi';
+
 import { CameraCanvas } from '@/components/3dCamera';
+import { Container } from '@/components/containers';
 
 export default function Home() {
   return (

@@ -1,10 +1,10 @@
 "use client"
 import { OrbitControls, Preload } from '@react-three/drei';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import React from 'react';
-import { CanvasLoader } from './CanvasLoader';
+
 import { CameraModel } from './CameraModel';
-import { useScroll, useTime, useTransform } from 'framer-motion';
+import { CanvasLoader } from './CanvasLoader';
 
 export const CameraCanvas = () => {
   const [isMobile, setIsMobile] = React.useState(false);

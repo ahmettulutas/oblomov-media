@@ -1,7 +1,6 @@
-import React from 'react';
 import './rotating-button.css';
 
-export const RotatingButton = () => {
+export const RotatingButton: React.FC = () => {
   return (
     <div className="wrapper">
       <div className="btn">

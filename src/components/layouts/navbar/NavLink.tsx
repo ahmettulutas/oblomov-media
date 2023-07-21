@@ -1,9 +1,8 @@
-import React from 'react';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 
 // This *client* component will be imported into a blog layout
-export default function BlogNavLink({
+export default function NavLink({
   slug,
   children
 }: {

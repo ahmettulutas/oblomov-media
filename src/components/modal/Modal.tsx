@@ -1,6 +1,7 @@
 'use client';
-import useClickOutside from '@/hooks/useClickOutside';
 import React from 'react';
+
+import useClickOutside from '@/hooks/useClickOutside';
 
 interface ModalProps {
   onClose: () => void;
