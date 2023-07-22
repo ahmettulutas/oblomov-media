@@ -1,0 +1,45 @@
+
+.btn {
+  position: relative;
+  height: 50px;
+  width: 150px;
+  transform-style: preserve-3d;
+  transition: all  0.5s ease; 
+  text-align: center;
+  position: relative;
+}
+
+.btn:hover {
+  transform: rotateX(90deg);
+}
+
+.btn:hover > .default-side {
+  background-color: var(--brand-color);
+}
+
+.btn:hover > .hover-side {
+  background-color: var(--brand-color-light);
+}
+
+.side {
+  display: flex;
+  justify-content: center;
+  width:100%;
+  height:100%;
+  line-height: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.5s ease;
+  background-color: var(--brand-color-light);
+  text-transform: uppercase;
+}
+
+.default-side {
+  transform: translateZ(25px);
+}
+
+.hover-side {
+  background-color: var(--brand-color);
+  transform: rotateX(-90deg) translateZ(-25px);
+}

@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --brand-color: red;
+  --brand-color: #c50000;
+  --brand-color-light: #e70000;
 }
 * {
   box-sizing: border-box;
