@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
+import Link from "next/link";
+import { useSelectedLayoutSegment } from "next/navigation";
 
 // This *client* component will be imported into a blog layout
 export default function NavLink({
@@ -16,7 +16,7 @@ export default function NavLink({
     <Link
       href={`/blog/${slug}`}
       // Change style depending on whether the link is active
-      style={{ fontWeight: isActive ? 'bold' : 'normal' }}
+      style={{ fontWeight: isActive ? "bold" : "normal" }}
     >
       {children}
     </Link>

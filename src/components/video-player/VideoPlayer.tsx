@@ -1,11 +1,11 @@
-'use client';
-import { AnimatePresence, motion } from 'framer-motion';
-import Image from 'next/image';
-import React from 'react';
+"use client";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import React from "react";
 
-import { videoCardVariants } from '@/constants/motinVariants';
+import { videoCardVariants } from "@/constants/motinVariants";
 
-import { Modal } from '../modal';
+import { Modal } from "../modal";
 
 type Props = {
   videoId: string;
@@ -13,7 +13,6 @@ type Props = {
 
 export const VideoPlayer: React.FC<Props> = ({ videoId }) => {
   const [showModal, setShowModal] = React.useState(false);
-
   return (
     <AnimatePresence>
       <motion.div
@@ -27,6 +26,7 @@ export const VideoPlayer: React.FC<Props> = ({ videoId }) => {
             fill
             src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
             alt="Video Thumbnail"
+            className='object-cover'
           />
 
           {showModal && (

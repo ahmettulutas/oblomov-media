@@ -1,5 +1,5 @@
-"use client"
-import { Html, useProgress } from '@react-three/drei';
+"use client";
+import { Html, useProgress } from "@react-three/drei";
 
 export const CanvasLoader = () => {
   const { progress } = useProgress();

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 /* eslint-disable react/no-unknown-property */
 import { useGLTF } from "@react-three/drei";
 
@@ -6,7 +6,7 @@ type CameraProps = {
   isMobile: boolean;
 }
 export const CameraModel: React.FC<CameraProps> = ({ isMobile }) => {
-  const camera = useGLTF('./canon-camera-model/scene.gltf');
+  const camera = useGLTF("./canon-camera-model/scene.gltf");
 
   return (
     <mesh>

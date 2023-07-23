@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 
 const useClickOutside = <T extends HTMLElement>(
   ref: React.RefObject<T>,
@@ -11,14 +11,26 @@ const useClickOutside = <T extends HTMLElement>(
         onClickOutside();
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [ref, onClickOutside]);
+
+  React.useEffect(() => {
+    const escPressed = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClickOutside();
+      }
+    };
+
+    window.addEventListener("keydown", escPressed);
+    return () => window.removeEventListener("keydown", escPressed);
+  });
+
 };
 
 export default useClickOutside;

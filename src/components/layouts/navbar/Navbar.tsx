@@ -1,16 +1,17 @@
-'use client';
-import { AnimatePresence, motion } from 'framer-motion';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import React from 'react';
-import { twMerge } from 'tailwind-merge';
+"use client";
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
+import { twMerge } from "tailwind-merge";
 
-import { Container } from '@/components/containers';
-import { navLinks } from '@/constants/links';
-import { listVariants, sideVariants } from '@/constants/motinVariants';
-import CameraIcon from '@/public/images/icons/camera.svg';
+import { Container } from "@/components/containers";
+import { navLinks } from "@/constants/links";
+import { listVariants, sideVariants } from "@/constants/motinVariants";
+import useClickOutside from "@/hooks/useClickOutside";
+import CameraIcon from "@/public/images/icons/camera.svg";
 
-import { NavbarToggle } from './NavbarToggle';
+import { NavbarToggle } from "./NavbarToggle";
 
 
 export const Navbar: React.FC = () => {
@@ -18,15 +19,15 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const currentPathName = usePathname();
-
+  const navRef = React.useRef(null);
   const handleScroll = () => {
     if (window.scrollY > 70) setScrolled(true);
     else setScrolled(false);
   };
-
+  useClickOutside(navRef, () => setOpen(false));
   React.useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return (() => window.removeEventListener('scroll', handleScroll));
+    window.addEventListener("scroll", handleScroll);
+    return (() => window.removeEventListener("scroll", handleScroll));
   }, []);
 
   React.useEffect(() => {
@@ -34,8 +35,8 @@ export const Navbar: React.FC = () => {
   }, [currentPathName]);
 
   return (
-    <nav className={twMerge('text-white transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent md:opacity-95', scrolled ? 'bg-primaryDark fixed py-2' : 'bg-transparent absolute py-4')}>
-      <Container className={twMerge('flex justify-between', scrolled ? 'py-1' : 'py-10')}>
+    <nav ref={navRef} className={twMerge("text-white transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent md:opacity-95", scrolled ? "bg-primaryDark fixed" : "bg-transparent absolute")}>
+      <Container className={twMerge("flex justify-between", scrolled ? "py-1" : "py-10")}>
         <Link href="/" className="flex gap-3 items-center justify-center">
           <CameraIcon className="text-white" />
           <p className=" text-sm md:text-xl">OBLOMOV</p>
@@ -43,9 +44,9 @@ export const Navbar: React.FC = () => {
         <ul className="gap-2 hidden md:flex">
           {navLinks.map(item => (
             <li key={item.id}>
-              <Link href={item.id} className={`${currentPathName === item.id ? 'before:w-full' : ''} h-full block relative mx-auto text-white before:w-0 hover:before:w-full
-              before:h-0.25 before:bg-white before:transition-all before:bottom-[-0.125rem] before:duration-200 before:absolute`}>
-                {item.title.toLocaleUpperCase('tr-TR')}
+              <Link href={item.id} className={`${currentPathName === item.id ? "before:w-full" : ""} h-full block relative mx-auto text-white 
+              before:left-0 before:w-0 hover:before:w-full ${scrolled ? "p-6 before:h-1" : "p-2 before:h-0.25"} before:bg-white before:transition-all before:bottom-[-0.125rem] before:duration-300 before:absolute`}>
+                {item.title.toLocaleUpperCase("tr-TR")}
               </Link>
             </li>
           ))}
@@ -55,7 +56,7 @@ export const Navbar: React.FC = () => {
             <motion.aside
               className="md:hidden bg-primaryDark absolute right-0 top-0 h-screen p-4"
               initial={{ width: 0 }}
-              animate={{ width: '50vw' }}
+              animate={{ width: "50vw" }}
               exit={{ width: 0, transition: { delay: 0.4, duration: 0.3 } }}
             >
               <motion.ul
