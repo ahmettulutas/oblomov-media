@@ -5,8 +5,10 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { Container } from "@/components/containers";
 
 export default function Home() {
+
+  const mainClassName = "flex h-[100svh] h-screen flex-col items-center justify-between";
   return (
-    <main className={"flex h-[calc(100dvh)] h-screen max-h-screen flex-col items-center justify-between"}>
+    <main className={mainClassName}>
       <video className="fixed top-0 h-full w-full object-cover -z-[10] overflow-hidden"
         src="/banner.mp4"
         autoPlay
@@ -28,7 +30,6 @@ export default function Home() {
           <HiArrowNarrowRight />
         </Link>
       </Container>
-      {/*       <CameraCanvas /> */}
     </main>
   );
 }

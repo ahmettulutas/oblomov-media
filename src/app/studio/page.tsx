@@ -4,6 +4,8 @@ import { CameraCanvas } from "@/components/3dCamera";
 import { accordionData } from "@/constants/accordion";
 import { images } from "@/constants/images";
 
+const carouselItems = [<p key={1}>Deneme</p>, <p key={1}>Deneme2</p>, <p key={1}>Deneme3</p>];
+
 export default function Page() {
   return (
     <section style={{ backgroundImage: `url(${studioBg.src})`, backgroundAttachment: "fixed" }} className="bg-center bg-no-repeat bg-cover">
@@ -18,7 +20,8 @@ export default function Page() {
         </section>
       </ContentContainer >
       <div className='my-10'>
-        <Carousel images={images} />
+        <Carousel imageCarousel showDots images={images} loop />
+        {/* <Carousel imageCarousel={false} carouselItems={carouselItems} /> */}
       </div>
     </section >
   );

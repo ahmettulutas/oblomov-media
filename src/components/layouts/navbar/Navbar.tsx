@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav ref={navRef} className={twMerge("text-white transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent md:opacity-95", scrolled ? "bg-primaryDark fixed" : "bg-transparent absolute")}>
-      <Container className={twMerge("flex justify-between", scrolled ? "py-1" : "py-10")}>
+      <Container className={twMerge("transition-all duration-300 flex justify-between", scrolled ? "" : "py-10")}>
         <Link href="/" className="flex gap-3 items-center justify-center">
           <CameraIcon className="text-white" />
           <p className=" text-sm md:text-xl">OBLOMOV</p>

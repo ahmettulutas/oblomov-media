@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Roboto } from "next/font/google";
 
+
 import { Navbar } from "@/components/layouts";
 
 export const metadata = {
