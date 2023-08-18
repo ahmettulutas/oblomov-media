@@ -19,12 +19,13 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const currentPathName = usePathname();
-  const navRef = React.useRef(null);
+  const asideRef = React.useRef<HTMLDivElement>(null);
+
   const handleScroll = () => {
     if (window.scrollY > 70) setScrolled(true);
     else setScrolled(false);
   };
-  useClickOutside(navRef, () => setOpen(false));
+  useClickOutside(asideRef, () => setOpen(false));
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return (() => window.removeEventListener("scroll", handleScroll));
@@ -35,7 +36,7 @@ export const Navbar: React.FC = () => {
   }, [currentPathName]);
 
   return (
-    <nav ref={navRef} className={twMerge("text-white transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent md:opacity-95", scrolled ? "bg-primaryDark fixed" : "bg-transparent absolute")}>
+    <nav className={twMerge("text-white transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent md:opacity-95", scrolled ? "bg-primaryDark fixed" : "bg-transparent absolute")}>
       <Container className={twMerge("transition-all duration-300 flex justify-between", scrolled ? "" : "py-10")}>
         <Link href="/" className="flex gap-3 items-center justify-center">
           <CameraIcon className="text-white" />
@@ -51,9 +52,11 @@ export const Navbar: React.FC = () => {
             </li>
           ))}
         </ul>
+        {/* Mobile Sidebar */}
         <AnimatePresence>
           {open && (
             <motion.aside
+              ref={asideRef}
               className="md:hidden bg-primaryDark absolute right-0 top-0 h-screen p-4"
               initial={{ width: 0 }}
               animate={{ width: "50vw" }}
@@ -80,6 +83,7 @@ export const Navbar: React.FC = () => {
             </motion.aside>
           )}
         </AnimatePresence>
+        {/* End of the Mobile Sidebar */}
         <div className="z-20 md:hidden flex justify-center items-center">
           <NavbarToggle open={open} toggle={() => setOpen(!open)} />
         </div>

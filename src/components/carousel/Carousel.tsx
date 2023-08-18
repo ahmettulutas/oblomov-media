@@ -70,10 +70,10 @@ export const Carousel: React.FC<CarouselProps> = (props) => {
           }
         </motion.div>
       </AnimatePresence>
-      <button className="absolute z-10 top-1/2 left-4 rotate-180 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded-md" onClick={() => paginate(1)}>
+      <button className="absolute z-10 top-1/2 left-4 rotate-180 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded-md" onClick={() => paginate(-1)}>
         {"‣"}
       </button>
-      <button className="absolute z-10 top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded-md" onClick={() => paginate(-1)}>
+      <button className="absolute z-10 top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded-md" onClick={() => paginate(1)}>
         {"‣"}
       </button>
       {showDots ? <DotIndicators numDots={itemsCount} currentSlide={current} onDotClick={handleDotClick} /> : null}
