@@ -10,7 +10,7 @@ type Props<T> = {
   className?: string;
 }
 
-export const Accordion: React.FC<Props<AccordionData>> = ({ items, className }) => {
+export const AccordionContainer: React.FC<Props<AccordionData>> = ({ items, className }) => {
   const [id, setId] = React.useState<undefined | number>(undefined);
   const handleSelect = (id: number | undefined): void => {
     setId(id);

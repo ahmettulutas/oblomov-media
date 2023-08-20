@@ -1,2 +1,2 @@
 export { AccordionItem } from "./AccordionItem";
-export { Accordion } from "./Accordion";
+export { AccordionContainer } from "./Accordion";
