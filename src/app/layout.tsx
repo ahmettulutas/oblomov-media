@@ -18,7 +18,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="tr">
       <body className={`text-white ${roboto.className}`}>
         <div className="absolute inset-0">
-          <Navbar />
+          {/*           <Navbar /> */}
           {children}
         </div>
       </body>

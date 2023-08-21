@@ -17,13 +17,21 @@ body {
   overflow-x: hidden;
 }
 
-.carousel {
-  display: inline-flex;
-  overflow-x: hidden;
-/*  scroll snap is a great feature which will center the image on snap on touch screen devices  */
-  scroll-snap-type: x mandatory;
-/* all below will hide the scrollbar on all browsers.    */
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+.wrapper {
+  margin: 0 auto;
+  max-width: 700px;
+  padding-top:300px;
+  padding-bottom:900px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+  padding: 40px;
+  position: sticky;
+  min-height: 300px;
+  top: 10px;
 }
