@@ -47,6 +47,7 @@ const mockData: Array<CardType> = [
 ];
 
 const OverlappingCards = () => {
+
   return (
     <div className="wrapper">
       {mockData.map((item, idx) =>

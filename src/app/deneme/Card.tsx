@@ -1,46 +1,37 @@
 "use client";
 /* import { useScroll } from "framer-motion";*/
-import React, { useRef } from "react";
+import { useScroll, motion, useSpring } from "framer-motion";
+import React, { RefObject, useRef } from "react";
 
 import { CardType } from "./Cards";
 
 const Card = ({ item, index }: { item: CardType, index: number }) => {
-  /*   const cardVariants = {
-      hidden: { opacity: 0, y: 100 },
-      visible: { opacity: 1, y: 0, transition: { delay: index * 0.2 } },
-    }; */
   const cardRef = useRef<HTMLDivElement | null>(null);
-  const [scale, setScale] = React.useState(1.2);
-  /*   const { scrollYProgress } = useScroll({
-      target: cardRef
-    }); */
-  const handleScroll = () => {
-    if (cardRef.current) {
-      const rect = cardRef.current.getBoundingClientRect();
-      if ((1 + (rect.top * 0.001)) > 0.9 && (1 + (rect.top * 0.001)) < 1.2) {
-        setScale(1 + (rect.top * 0.001));
-      }
-    }
-  };
-  React.useLayoutEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const { scrollYProgress } = useScroll({
+    target: cardRef
+  });
 
   return (
-    (
-      <div
-        ref={cardRef}
-        className="card" key={item.projectNumber} style={{ transform: `scale(${scale}) translate3d(0, ${-1 * (scale * 10)}px , 0)` }}
-      >
-        <div className="bg-black h-8 absolute top-0 lef-0 w-40" style={{ width: `${scale * -1} px` }} />
-        <h2><span>{item.projectNumber}</span>T{item.title}</h2>
-        <p>{item.description}</p>
+    <motion.div
+      style={{ transform: `scale3d(0, ${scrollYProgress}, 0)` }}
+      ref={cardRef}
+      className="card p-24" key={item.projectNumber}
+    >
 
-      </div >
-    )
+      <h2><span>{item.projectNumber}</span>T{item.title}</h2>
+      <p>{item.description}</p>
+      <svg id="progress" width="75" height="75" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
+        <motion.circle
+          cx="50"
+          cy="50"
+          r="30"
+          pathLength="1"
+          className="indicator"
+          style={{ pathLength: scrollYProgress }}
+        />
+      </svg>
+    </motion.div>
 
   );
 };
