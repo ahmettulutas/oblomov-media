@@ -32,6 +32,8 @@ body {
   color: #333;
   padding: 40px;
   position: sticky;
-  min-height: 300px;
+  min-height: 500px;
+  margin:auto;
+  width:50vw;
   top: 10px;
 }
