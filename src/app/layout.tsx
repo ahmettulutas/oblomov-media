@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Roboto } from "next/font/google";
 
-
 import { Navbar } from "@/components/layouts";
 
 export const metadata = {
@@ -17,10 +16,10 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="tr">
       <body className={`text-white ${roboto.className}`}>
-        <div className="absolute inset-0">
+        <main className="absolute inset-0">
           <Navbar />
           {children}
-        </div>
+        </main>
       </body>
     </html>
   );

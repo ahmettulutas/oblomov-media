@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { TbFocusCentered } from "react-icons/tb";
 
 import { Container } from "@/components/containers";
 
@@ -17,7 +18,7 @@ export default function Home() {
         controls={false}
       />
       <div className="relative w-4/5 md:w-2/6 h-60 m-auto">
-        <Image alt="camera-focus" fill src={"/camera.png"} className="m-auto p-4" />
+        <TbFocusCentered className="text-4xl m-auto w-full h-full stroke-[.3px]" />
       </div>
       <div className="fixed top-0 h-full w-full bg-overLay -z-[8] opacity-70" />
       <Container className={"flex justify-between text-sm md:text-xl py-4 items-center"}>

@@ -2,7 +2,7 @@
 .btn {
   position: relative;
   height: 50px;
-  width: 150px;
+  width: 100%;
   transform-style: preserve-3d;
   transition: all  0.5s ease; 
   text-align: center;
