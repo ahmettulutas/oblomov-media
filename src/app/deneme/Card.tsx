@@ -10,7 +10,7 @@ const Card = ({ item, index }: { item: CardType, index: number }) => {
       visible: { opacity: 1, y: 0, transition: { delay: index * 0.2 } },
     }; */
   const cardRef = useRef<HTMLDivElement | null>(null);
-  const [scale, setScale] = React.useState(0);
+  const [scale, setScale] = React.useState(1.2);
   /*   const { scrollYProgress } = useScroll({
       target: cardRef
     }); */

@@ -19,9 +19,8 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 700px;
   padding-top:300px;
-  padding-bottom:900px;
+  padding-bottom:100px;
 }
 
 .card {
@@ -33,7 +32,7 @@ body {
   padding: 40px;
   position: sticky;
   min-height: 500px;
-  margin:auto;
+  margin:5rem auto;
   width:50vw;
   top: 10px;
 }
