@@ -1,5 +1,3 @@
-import * as React from "react";
-
 type ToggleProps = {
   open: boolean;
   toggle: () => void

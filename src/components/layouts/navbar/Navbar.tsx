@@ -8,7 +8,6 @@ import { twMerge } from "tailwind-merge";
 import { Container } from "@/components/containers";
 import { navLinks } from "@/constants/links";
 import { listVariants, sideVariants } from "@/constants/motinVariants";
-import useClickOutside from "@/hooks/useClickOutside";
 import CameraIcon from "@/public/images/icons/camera.svg";
 
 import { NavbarToggle } from "./NavbarToggle";
@@ -19,13 +18,10 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const currentPathName = usePathname();
-  const asideRef = React.useRef<HTMLDivElement>(null);
-
   const handleScroll = () => {
     if (window.scrollY > 70) setScrolled(true);
     else setScrolled(false);
   };
-  useClickOutside(asideRef, () => setOpen(false));
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return (() => window.removeEventListener("scroll", handleScroll));
@@ -55,32 +51,34 @@ export const Navbar: React.FC = () => {
         {/* Mobile Sidebar */}
         <AnimatePresence>
           {open && (
-            <motion.aside
-              ref={asideRef}
-              className="md:hidden bg-primaryDark absolute right-0 top-0 h-screen p-4"
-              initial={{ width: 0 }}
-              animate={{ width: "50vw" }}
-              exit={{ width: 0, transition: { delay: 0.4, duration: 0.3 } }}
-            >
-              <motion.ul
-                className="mt-24"
-                initial="closed"
-                animate="open"
-                exit="closed"
-                variants={sideVariants}
+            <div>
+              <button onClick={() => setOpen(false)} className="backdrop-blur-[1px] absolute left-0 top-0 h-screen p-4 w-screen" />
+              <motion.aside
+                className="md:hidden bg-primaryDark absolute right-0 top-0 h-screen p-4"
+                initial={{ width: 0 }}
+                animate={{ width: "50vw" }}
+                exit={{ width: 0, transition: { delay: 0.4, duration: 0.3 } }}
               >
-                {navLinks.map(({ title, id }) => (
-                  <motion.li
-                    className="border-t-2 border-borderTop py-3 px-3 text-center"
-                    key={id}
-                    whileHover={{ scale: 1.1 }}
-                    variants={listVariants}
-                  >
-                    <Link href={id}>{title}</Link>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.aside>
+                <motion.ul
+                  className="mt-24"
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                  variants={sideVariants}
+                >
+                  {navLinks.map(({ title, id }) => (
+                    <motion.li
+                      className="border-t-2 border-borderTop py-3 px-3 text-center"
+                      key={id}
+                      whileHover={{ scale: 1.1 }}
+                      variants={listVariants}
+                    >
+                      <Link href={id}>{title}</Link>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.aside>
+            </div>
           )}
         </AnimatePresence>
         {/* End of the Mobile Sidebar */}
