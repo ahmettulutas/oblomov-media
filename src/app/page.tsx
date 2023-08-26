@@ -6,7 +6,7 @@ import { Container } from "@/components/containers";
 
 export default function Home() {
 
-  const mainClassName = "flex h-[100svh] h-screen flex-col items-center justify-between";
+  const mainClassName = "flex h-screen h-[100svh] flex-col items-center justify-between";
   return (
     <main className={mainClassName}>
       <video className="fixed top-0 h-full w-full object-cover -z-[10] overflow-hidden"

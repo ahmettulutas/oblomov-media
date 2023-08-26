@@ -20,10 +20,12 @@ export const Navbar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const currentPathName = usePathname();
   const navRef = React.useRef(null);
+
   const handleScroll = () => {
     if (window.scrollY > 70) setScrolled(true);
     else setScrolled(false);
   };
+
   useClickOutside(navRef, () => setOpen(false));
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);

@@ -34,8 +34,8 @@ body {
    position: -webkit-sticky;
    display: block;
   min-height: 500px;
-  margin:5rem auto;
-  width:50vw;
+  margin:10rem auto;
+  width:70vw;
   top: 10px;
 }
 .progress-bar {
