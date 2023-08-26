@@ -14,6 +14,7 @@ export default function Home() {
         src="/banner.mp4"
         autoPlay
         loop
+        playsInline // future note. this line has solved autoplay bug on ios
         muted
         controls={false}
       />
