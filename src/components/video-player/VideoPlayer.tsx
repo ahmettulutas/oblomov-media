@@ -30,19 +30,15 @@ export const VideoPlayer: React.FC<Props> = ({ videoId }) => {
           />
 
           {showModal && (
-            <div className="modal">
-              <div className="modal-content">
-                <Modal onClose={() => setShowModal(false)}>
-                  <iframe
-                    width="420" height="345"
-                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-                    className="w-full h-full"
-                    title="YouTube Video"
-                    allowFullScreen
-                  />
-                </Modal>
-              </div>
-            </div>
+            <Modal onClose={() => setShowModal(false)}>
+              <iframe
+                width="420" height="345"
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                className="w-full h-full"
+                title="YouTube Video"
+                allowFullScreen
+              />
+            </Modal>
           )}
 
         </div>

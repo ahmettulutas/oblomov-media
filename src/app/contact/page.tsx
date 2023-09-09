@@ -12,7 +12,7 @@ export default function Page() {
       <div className="w-screen top-0 left-0 relative h-full">
         <Image src={ContactHero} alt="oblomov media iletişim arka planı" />
       </div>
-      <h1 className="page-header">Bizimle İletişime Geçin</h1>
+      <h1 className="page-header m-auto mb-24">Bizimle İletişime Geçin</h1>
       <section style={{ backgroundImage: `url(${contactBg.src})`, backgroundRepeat: "no-repeat" }}>
         <ContentContainer className='pt-12 pb-10'>
           <section className="my-16 grid grid-cols-1 md:grid-cols-3 gap-12">

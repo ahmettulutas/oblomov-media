@@ -1,1 +1,1 @@
-export { ContactUsButton } from "./contact-us";
+export { SubmitButton } from "./contact-us";

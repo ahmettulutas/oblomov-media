@@ -16,6 +16,9 @@ module.exports = {
       maxWidth: {
         "8xl": "90rem"
       },
+      minHeight: {
+        "1" : "1rem"
+      },
       backgroundColor: {
         primary: "0000",
         secondary: "#111a21"
@@ -27,7 +30,9 @@ module.exports = {
         primaryDark: "#1a1a1a",
         brandColor: "var(--brand-color)",
         overLay: "#212020",
-        borderTop: "rgba(255,255,255,.03)"
+        borderTop: "rgba(255,255,255,.03)",
+        success: "#5cb85c",
+        warning: "#f0ad4e"
       },
       fontFamily: {
         lato: "Lato, Helvetica, Arial, sans-serif"

@@ -21,6 +21,10 @@ html ::-webkit-scrollbar {
   display: none;
 }
 
+textarea {
+  resize: none;
+}
+
 .page-header { 
-  @apply text-4xl font-bold text-center m-auto lg:max-w-[50%] leading-tight uppercase tracking-widest;
+  @apply text-4xl font-bold text-center lg:max-w-[50%] leading-tight uppercase tracking-widest;
 }

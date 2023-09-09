@@ -32,8 +32,8 @@ export const Navbar: React.FC = () => {
   }, [currentPathName]);
 
   return (
-    <nav className={twMerge("text-white transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent md:opacity-95", scrolled ? "bg-primaryDark fixed" : "bg-transparent absolute")}>
-      <Container className={twMerge("transition-all duration-300 flex justify-between", scrolled ? "" : "py-10")}>
+    <nav className={twMerge("text-white tracking-wide transition-all ease-in delay-100 border-red-500 top-0 right-0 z-50 left-0 bg-transparent md:opacity-95", scrolled ? "bg-primaryDark fixed" : "bg-transparent absolute")}>
+      <Container className={twMerge("transition-all duration-300 flex justify-between py-2", scrolled ? "" : "py-10")}>
         <Link href="/" className="flex gap-3 items-center justify-center">
           <CameraIcon className="text-white" />
           <p className=" text-sm md:text-xl">OBLOMOV</p>
@@ -41,7 +41,7 @@ export const Navbar: React.FC = () => {
         <ul className="gap-2 hidden md:flex">
           {navLinks.map(item => (
             <li key={item.id}>
-              <Link href={item.id} className={`${currentPathName === item.id ? "before:w-full" : ""} h-full block relative mx-auto text-white 
+              <Link href={item.id} className={`${currentPathName === item.id ? "before:w-full" : ""} h-full block relative mx-auto
               before:left-0 before:w-0 hover:before:w-full ${scrolled ? "p-6 before:h-1" : "p-2 before:h-0.25"} before:bg-white before:transition-all before:bottom-[-0.125rem] before:duration-300 before:absolute`}>
                 {item.title.toLocaleUpperCase("tr-TR")}
               </Link>

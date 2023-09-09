@@ -64,3 +64,25 @@ export const carouselVariants = {
     };
   }
 };
+export const animatePlane = {
+  hidden: {},
+  visible: { 
+    translateX: [0, 10, 0], 
+    translateY: [0, -10, 0],
+    opacity: [1, 0.5, 1], 
+    transition: { repeat: Infinity, duration: 1 } 
+  }
+};
+
+export const showSvg = {
+  hidden: { pathLength: 0, scale: 0.9, opacity: 0 },
+  visible: {
+    pathLength: 1,
+    opacity: 1,
+    scale: 1.1, 
+    transition: {
+      pathLength: { type: "spring", duration: 1.5, bounce: 0, spring: 10 },
+      scale: { type: "spring", duration: .5, bounce: 0, delay: 0, stiffness: 300 },
+    },
+  },
+};

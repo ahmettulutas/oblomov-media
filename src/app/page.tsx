@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { TbFocusCentered } from "react-icons/tb";
 
 import { Container } from "@/components/containers";
 
@@ -18,15 +17,11 @@ export default function Home() {
         muted
         controls={false}
       />
-      <div className="relative w-4/5 md:w-2/6 h-60 m-auto">
-        <TbFocusCentered className="text-4xl m-auto w-full h-full stroke-[.3px]" />
-      </div>
+      <Image width={400} height={200} alt="camera-focus" src={"/camera.png"} className="m-auto p-4" priority />
       <div className="fixed top-0 h-full w-full bg-overLay -z-[8] opacity-70" />
       <Container className={"flex justify-between text-sm md:text-xl py-4 items-center"}>
         <p>OBLOMOV</p>
-        <div className="relative w-20 h-10">
-          <Image alt="slider-bar" fill src={"/slider-bar.png"} className='object-cover' />
-        </div>
+        <Image alt="slider-bar" width={100} height={40} style={{ height: "auto" }} src={"/slider-bar.png"} className='object-cover' />
         <Link href="/videos" className="flex gap-2 items-center">
           <p>Daha fazla</p>
           <HiArrowNarrowRight />

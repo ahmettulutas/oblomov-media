@@ -1,1 +1,2 @@
-## When logo is clicked navbar opens again.
+## Emailjs integration.
+## Contentful integration.

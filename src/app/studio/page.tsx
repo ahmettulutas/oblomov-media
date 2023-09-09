@@ -10,7 +10,7 @@ export default function Page() {
     <section style={{ backgroundImage: `url(${studioBg.src})`, backgroundAttachment: "fixed", backgroundRepeat: "no-repeat" }} className="bg-center bg-no-repeat bg-cover">
       <ContentContainer className='pt-52 pb-10'>
 
-        <h1 className='page-header mb-24'>kişisel ve kurumsal medya ve içerik üreten yeni trendlerle sizi bilinir kılan bir medya şirketi</h1>
+        <h1 className='page-header m-auto mb-24'>kişisel ve kurumsal medya ve içerik üreten yeni trendlerle sizi bilinir kılan bir medya şirketi</h1>
         <Features data={featuresData} />
         <section className='my-16 grid grid-cols-1 md:grid-cols-2 gap-8'>
           <AccordionContainer className='order-2 md:order-1' items={accordionData} />
