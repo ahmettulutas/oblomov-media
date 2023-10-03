@@ -1,11 +1,9 @@
 "use client";
 /* eslint-disable react/no-unknown-property */
 import { useGLTF } from "@react-three/drei";
+import React from "react";
 
-type CameraProps = {
-  isMobile: boolean;
-}
-export const CameraModel: React.FC<CameraProps> = ({ isMobile }) => {
+export const CameraModel: React.FC = () => {
   const camera = useGLTF("./canon-camera-model/scene.gltf");
 
   return (
@@ -22,8 +20,7 @@ export const CameraModel: React.FC<CameraProps> = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={camera.scene}
-        scale={isMobile ? 0.5 : 0.75}
-        position={isMobile ? [0, 0, 0] : [0, -0.3, 0]}
+        position={[0, -0.3, 0]}
         rotation={[-0.01, 0, -0.1]}
       />
     </mesh>
