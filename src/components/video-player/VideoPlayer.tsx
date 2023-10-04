@@ -26,7 +26,6 @@ export const VideoPlayer: React.FC<Props> = ({ videoId }) => {
             fill
             src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
             alt="Video Thumbnail"
-            className='object-cover'
           />
 
           {showModal && (
