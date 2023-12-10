@@ -8,16 +8,26 @@ import { AccordionItem } from "./AccordionItem";
 type Props<T> = {
   items: Array<T>;
   className?: string;
-}
+};
 
-export const AccordionContainer: React.FC<Props<AccordionData>> = ({ items, className }) => {
+export const AccordionContainer: React.FC<Props<AccordionData>> = ({
+  items,
+  className,
+}) => {
   const [id, setId] = React.useState<undefined | number>(undefined);
-  const handleSelect = (id: number | undefined): void => {
+  const handleToggle = (id: number | undefined): void => {
     setId(id);
   };
   return (
     <section className={className}>
-      {items.map(accordion => (<AccordionItem item={accordion} key={accordion.id} toggle={handleSelect} selected={id} />))}
+      {items.map((accordion) => (
+        <AccordionItem
+          item={accordion}
+          key={accordion.id}
+          toggle={handleToggle}
+          selected={id}
+        />
+      ))}
     </section>
   );
 };

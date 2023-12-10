@@ -7,7 +7,11 @@ const useClickOutside = <T extends HTMLElement>(
 ) => {
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      if (ref.current && event.target instanceof Node && !ref.current.contains(event.target))
+      if (
+        ref.current &&
+        event.target instanceof Node &&
+        !ref.current.contains(event.target)
+      )
         onClickOutside();
     };
 
@@ -30,7 +34,6 @@ const useClickOutside = <T extends HTMLElement>(
     window.addEventListener("keydown", escPressed);
     return () => window.removeEventListener("keydown", escPressed);
   });
-
 };
 
 export default useClickOutside;

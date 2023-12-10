@@ -90,6 +90,7 @@ module.exports = {
     "space-before-blocks": ["error", "always"],
     "object-curly-spacing": ["error", "always"],
     "indent": ["error", 2],
+    "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
   },
   overrides: [
     {

@@ -9,5 +9,5 @@ export const videos = [
   { link: "aQ4Sb_rnCqw", key: 8 },
   { link: "lXeGo7muX-A", key: 9 },
   { link: "kaeqLI2uFTw", key: 10 },
-  { link: "pMLIQP46OwE", key: 11 }
+  { link: "pMLIQP46OwE", key: 11 },
 ] as const;
